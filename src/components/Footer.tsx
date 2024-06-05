@@ -1,0 +1,20 @@
+
+
+const Footer = () => {
+  return (
+    <div className='bg-black py-10'>
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <span className='text-2xl text-white font-bold tracking-tighter'>
+            © 2024 Mom's Kitchen
+        </span >
+        <span className='text-white font-fold tracking-tighter flex gap-4'>
+            <span>Privacy Policy</span>
+            <span>Terms of Service</span>
+            <span>Cookie Policy</span>
+        </span>
+      </div>
+    </div>
+  )
+}
+
+export default Footer
