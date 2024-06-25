@@ -25,6 +25,7 @@ const CuisinesSection = () => {
                   cuisine={cuisineItem}
                   key={key}
                   field={field}
+                  
                 />
               ))}
             </div>
