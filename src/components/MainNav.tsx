@@ -8,7 +8,6 @@ const MainNav = () => {
     <span className="flex space-x-2 items-center">
       {isAuthenticated ? (
         <UsernameMenu />
-      
       ) : (
         <Button
           variant="ghost"

@@ -15,15 +15,26 @@ const UsernameMenu = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex items-center px-3 font-bold text-white hover:text-orange-500 gap-2">
-        <CircleUserRound className="text-orange-500" />
-        {user?.email}
+      <DropdownMenuTrigger className="flex w-[170px] h-[30px] overflow-hidden items-center px-3 font-bold text-white hover:text-orange-500 gap-2">
+        <div className="flex items-center gap-2">
+          <CircleUserRound className="text-orange-500" size={20} />
+          <div>{user?.email}</div>
+        </div>
       </DropdownMenuTrigger>
+
       <DropdownMenuContent className="w-[200px]">
         <DropdownMenuItem>
           <Link
+            to={"/manage-restaurant"}
+            className="font-bold text-black hover:text-orange-500"
+          >
+            Manage Restaurant
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link
             to={"/user-profile"}
-            className="font-bold text-orange-500 hover:text-black"
+            className="font-bold text-black hover:text-orange-500"
           >
             Profile
           </Link>

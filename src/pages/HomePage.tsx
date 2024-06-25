@@ -15,7 +15,7 @@ const HomePage = () => {
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           <span className="font-bold text-3xl tracking-tighter">Order takeaway even faster!</span>
           <span>
-            Download the Mom's Kitchen App for faster ordering and personalised
+            Download the Mom's Kitchen App for faster ordering and personalized
             recommendation
           </span>
           <img src={appdownloadImage} alt="app-download" />
