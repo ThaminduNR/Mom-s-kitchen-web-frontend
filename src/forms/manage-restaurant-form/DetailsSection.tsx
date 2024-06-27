@@ -9,7 +9,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useFormContext } from "react-hook-form";
 
-const DetailsSection = () => {
+const  DetailsSection = () => {
   const { control } = useFormContext();
   return (
     <div className="space-y-2">
