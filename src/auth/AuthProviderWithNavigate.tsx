@@ -1,11 +1,11 @@
-import { Auth0Provider } from "@auth0/auth0-react";
+import { AppState, Auth0Provider } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const AuthProviderWithNavigate = ({ children }: Props) => {
+const Auth0ProviderWithNavigate = ({ children }: Props) => {
   const navigate = useNavigate();
 
   const domain = import.meta.env.VITE_AUTH0_DOMAIN;
@@ -14,13 +14,11 @@ const AuthProviderWithNavigate = ({ children }: Props) => {
   const audience = import.meta.env.VITE_AUTH_AUDIENCE;
 
   if (!domain || !clientId || !redirectUri || !audience) {
-    throw new Error(
-      "Please define the Auth0 domain, clientId, and redirectUri in your .env file"
-    );
+    throw new Error("unable to initialise auth");
   }
 
-  const onRedirectCallBack = async () => {
-    navigate("/auth-callback");
+  const onRedirectCallback = (appState?: AppState) => {
+    navigate(appState?.returnTo || "/auth-callback");
   };
 
   return (
@@ -31,11 +29,11 @@ const AuthProviderWithNavigate = ({ children }: Props) => {
         redirect_uri: redirectUri,
         audience,
       }}
-      onRedirectCallback={onRedirectCallBack}
+      onRedirectCallback={onRedirectCallback}
     >
       {children}
     </Auth0Provider>
   );
 };
 
-export default AuthProviderWithNavigate;
+export default Auth0ProviderWithNavigate;
