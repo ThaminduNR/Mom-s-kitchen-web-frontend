@@ -16,7 +16,7 @@ const MenuSection = () => {
       <div>
         <h2 className="text-2xl font-bold">Menu</h2>
         <FormDescription>
-          Create your restaurant menu by adding menu items below.
+          Create your menu and give each item a name and a price
         </FormDescription>
       </div>
       <FormField
@@ -33,7 +33,7 @@ const MenuSection = () => {
           </FormItem>
         )}
       />
-      <Button type="button" onClick={() => append({ name: "", price: 0 })}>
+      <Button type="button" onClick={() => append({ name: "", price: "" })}>
         Add Menu Item
       </Button>
     </div>
