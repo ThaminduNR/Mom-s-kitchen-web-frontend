@@ -9,7 +9,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useFormContext } from "react-hook-form";
 
-const  DetailsSection = () => {
+const DetailsSection = () => {
   const { control } = useFormContext();
   return (
     <div className="space-y-2">
@@ -76,7 +76,7 @@ const  DetailsSection = () => {
 
       <FormField
         control={control}
-        name="estimatedDeliveryTime"
+        name="estimateddeliveryTime"
         render={({ field }) => (
           <FormItem className="max-w-[25%]">
             <FormLabel>Estimated Delivery Time</FormLabel>

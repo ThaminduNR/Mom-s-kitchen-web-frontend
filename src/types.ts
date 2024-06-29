@@ -15,13 +15,22 @@ export type MenuItem = {
 
 export type Restaurant = {
   _id: string;
-  name: string;
+  restaurantName: string;
   city: string;
   country: string;
   deliveryPrice: number;
-  estimatesDeliveryTime: number;
-  cuisine: string[];
-  menuItems: MenuItem[];
+  estimateddeliveryTime: number;
+  cuisines: string[];
+  menuItem: MenuItem[];
   imageUrl: string;
-  lastUpodated: string;
+  lastUpdate: string;
+};
+
+export type RestaurantSearchResponse = {
+  data: Restaurant[];
+  pagination: {
+    total: number;
+    page: number;
+    pages: number;
+  };
 };
